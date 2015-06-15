@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MMBeer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="beer_id">Beer ID</string>
+    <string name="refresh">Refresh List</string>
+</resources>

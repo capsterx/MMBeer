@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.capsterx.mmbeer" >
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="11" />
+
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Preferences"
+            android:label="MMBeer Preferences"
+            ></activity>
+        <activity android:name=".ClubID"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:keepScreenOn="true"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            >
+        </activity>
+        <receiver android:name=".receivers.PeriodicTaskReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_LOW" />
+                <action android:name="android.intent.action.BATTERY_OKAY" />
+                <action android:name="com.example.app.PERIODIC_TASK_HEART_BEAT" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".receivers.BootAndUpdateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".services.BackgroundService" />
+
+        <service
+            android:name="org.capsterx.mmbeer.services.BeerSpiceService"
+            android:exported="false" />
+    </application>
+</manifest>

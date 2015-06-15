@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference android:title="Your Name"
+        android:key="username"
+        android:summary="Please provide your username"></EditTextPreference>
+    <EditTextPreference android:title="Your Password"
+        android:key="password"
+        android:summary="Please provide your password"
+        android:inputType="textPassword"
+        ></EditTextPreference>
+    <EditTextPreference android:title="Club ID"
+        android:key="club_id"
+        android:summary="Please provide your club id"
+        android:enabled="false"
+        android:selectable="false"
+        ></EditTextPreference>
+</PreferenceScreen>
